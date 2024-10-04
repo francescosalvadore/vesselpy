@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+  
+VESSELPY_BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+source $VESSELPY_BIN_DIR/../load_env.sh
+
+python3 $VESSELPY_BIN_DIR/../code/vessel.py --working-dir $(pwd) "${@}"
+
