@@ -25,9 +25,9 @@ apt install paraview
 ```
 
 [5] Set ParaView folder in `load_env.sh`:
-`
+```
 export PARAVIEW_FOLDER="/opt/paraviewopenfoam510/lib/python3.10/site-packages"
-`
+```
 
 [6] Run the example:
 ```
