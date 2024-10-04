@@ -1,6 +1,6 @@
 # *vesselpy* - Hydrostatic solver
 
-## Installation
+## Quick start
 
 [1] Clone the repository:
 ```
@@ -89,7 +89,6 @@ corresponding to 3DOF, 2DOF (free trim), 2DOF (free roll), 1DOF, 0DOF solvers.
 
 Beware: *mass*, *cog_x*, *cog_y*, *z_water_fixed*, *alfa_fixed*, *heel_fixed* can be inputs, outputs, or optional inputs depending on the selected mode. For example:
 - the 3DOF solver requires *mass*, *cog_x*, *cog_y* as inputs but *z_water_fixed*, *alfa_fixed*, *heel_fixed* can be specified as *auto* or giving values which are treated as initial values to speed-up the convergence of their solutions. - - the 0DOF solver requires *alfa_fixed*, *heel_fixed* and *z_water_fixed* as inputs and *mass*, *cog_x*, *cog_y* must be specified as *auto* or are in any case ignored.
-- For more details see the paper.
 
 An example is given below:
 ```
@@ -116,3 +115,15 @@ control_points   = [[0.0, 0.212, 0.0289288],[0.0, 0.0, 0.01]]
 The triangularized geometry has to provided using ASCII stl format. Triangles must be sufficienctly detailed to describe the geometry.
 Moreover, even for planar surfaces, triangles lenght must be limited so that the convergence of hydrostatic algorithm is easier.
 Watertightness of the geometry is recommended but not strictly necessary.
+
+## Results
+
+Results are contained in the *output/1* folder and are:
+
+- `info.dat`: summarizes the inputs of the case
+- `results.dat`: summarizes the results, hydrostatic equilibrium and small-angle stablity outputs
+- `stab.dat`: summarizes large-angle heel stability results
+- `z_water_opt.stl`: triangularized geometry of the water at the hydrostatic equilibrium
+- `hull_rotated.stl`: triangularized geometry of the hull at the hydrostatic equilibrium
+
+For more details on case preparation and understanding results look at the paper here.
