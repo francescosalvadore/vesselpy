@@ -51,7 +51,7 @@ Two input files are needed to start:
 * `config.ini` input file
 * `stl/<geometry_name>.stl` triangularized (ASCII) geometry
 
-## config.ini
+### config.ini
 
 The file is a .ini file including two sections: *general* and *case_\<casename\>* sections.
 
@@ -110,7 +110,7 @@ heel_stability   = 0:0:10
 control_points   = [[0.0, 0.212, 0.0289288],[0.0, 0.0, 0.01]]
 ```
 
-## stl/<geometry_name>.stl
+### stl/<geometry_name>.stl
 
 The triangularized geometry has to provided using ASCII stl format. Triangles must be sufficienctly detailed to describe the geometry.
 Moreover, even for planar surfaces, triangles lenght must be limited so that the convergence of hydrostatic algorithm is easier.
