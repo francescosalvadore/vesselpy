@@ -16,7 +16,7 @@ pip3 install -r requirements.txt
 
 [3] Add vesselpy bin to PATH environment variable (to `.bashrc`):
 ```
-export PATH=$HOME/vesselpy/bin:$PATH
+export PATH=$HOME/VESSELPY/vesselpy/bin:$PATH
 ```
 
 [4] Download and install ParaView:
@@ -24,7 +24,7 @@ export PATH=$HOME/vesselpy/bin:$PATH
 apt install paraview
 ```
 
-[5] Set ParaView folder in `load_env.sh`:
+[5] Set ParaView folder in `load_env.sh`, e.g, e.g..:
 ```
 export PARAVIEW_FOLDER="/opt/paraviewopenfoam510/lib/python3.10/site-packages"
 ```
@@ -33,6 +33,7 @@ export PARAVIEW_FOLDER="/opt/paraviewopenfoam510/lib/python3.10/site-packages"
 ```
 cd .. && mkdir run && cd run
 cp -r ../vesselpy/examples/w3/ .
+cd w3
 vesselpy
 ```
 
