@@ -58,10 +58,10 @@ Two input files are needed to start:
 The file is a *.ini* file including two sections: *general* and *case_\<casename\>* sections.
 
 * *general* section includes:
-- *gravity*
-- atmospheric pressure *p_atmo* (which has no actually no role)
-- *refine_factor* which decides how to refine the surface (can be kept as 1 to avoid refinement) 
-- *case* which is the name of the case to simulate. The name of the case is used to label the other section to be considered in the run (so that many cases can be kept in the same input file and the *general* section decides which case is run.
+    - *gravity*
+    - atmospheric pressure *p_atmo* (which has no actually no role)
+    - *refine_factor* which decides how to refine the surface (can be kept as 1 to avoid refinement) 
+    - *case* which is the name of the case to simulate. The name of the case is used to label the other section to be considered in the run (so that many cases can be kept in the same input file and the *general* section decides which case is run.
 
 An example is given below:
 ```
@@ -73,21 +73,21 @@ case             = w3
 ```
 
 * *case_\<casename\>* section contains
-- *mode*, i.e., the hydrostatic mode which can be on the following:
-```
-"weight_lcg_tcg", "weight_lcg_heel", "weight_trim_tcg", "weight_trim_heel", "sinkage_trim_heel"
-```
-corresponding to 3DOF, 2DOF (free trim), 2DOF (free roll), 1DOF, 0DOF solvers.
-- *filepath* contains the name of the triangularized geometry in the *stl* folder
-- *mass* of the hull
-- *rho* water density
-- *cog_x*, *cog_y*, *cog_z* center of gravity coordinates
-- *cor_x*, *cor_y*, *cor_z* center of (trim and heel) rotation coordinates. Convenient choices usually include CoG or (0,0,0) points.
-- *z_water_fixed* height of water plane or *auto* if it is an output
-- *alfa_fixed* trim angle or *auto* if it is an output
-- *heel_fixed* heel (roll) angle or *auto* if it is an output
-- *heel_stability* defines the values of heel large-angle stability heel angles considered in the analysis. The syntax is given by start:stop:step, e.g., 0:80:10 means that the values 0,10,20,30,40,50,60,70,80 will be considered.
-- *control_points* defines the list of points which are tracked and for which the final hydrostatic equilibrium positions are reported. The list must be inserted as list of list using square brackets, e.g., *[[0.0, 0.212, 0.0289288],[0.0, 0.0, 0.01]]*
+    - *mode*, i.e., the hydrostatic mode which can be on the following:
+    ```
+    "weight_lcg_tcg", "weight_lcg_heel", "weight_trim_tcg", "weight_trim_heel", "sinkage_trim_heel"
+    ```
+    corresponding to 3DOF, 2DOF (free trim), 2DOF (free roll), 1DOF, 0DOF solvers.
+    - *filepath* contains the name of the triangularized geometry in the *stl* folder
+    - *mass* of the hull
+    - *rho* water density
+    - *cog_x*, *cog_y*, *cog_z* center of gravity coordinates
+    - *cor_x*, *cor_y*, *cor_z* center of (trim and heel) rotation coordinates. Convenient choices usually include CoG or (0,0,0) points.
+    - *z_water_fixed* height of water plane or *auto* if it is an output
+    - *alfa_fixed* trim angle or *auto* if it is an output
+    - *heel_fixed* heel (roll) angle or *auto* if it is an output
+    - *heel_stability* defines the values of heel large-angle stability heel angles considered in the analysis. The syntax is given by start:stop:step, e.g., 0:80:10 means that the values 0,10,20,30,40,50,60,70,80 will be considered.
+    - *control_points* defines the list of points which are tracked and for which the final hydrostatic equilibrium positions are reported. The list must be inserted as list of list using square brackets, e.g., *[[0.0, 0.212, 0.0289288],[0.0, 0.0, 0.01]]*
 
 Beware: *mass*, *cog_x*, *cog_y*, *z_water_fixed*, *alfa_fixed*, *heel_fixed* can be inputs, outputs, or optional inputs depending on the selected mode. For example:
 - the 3DOF solver requires *mass*, *cog_x*, *cog_y* as inputs but *z_water_fixed*, *alfa_fixed*, *heel_fixed* can be specified as *auto* or giving values which are treated as initial values to speed-up the convergence of their solutions. - - the 0DOF solver requires *alfa_fixed*, *heel_fixed* and *z_water_fixed* as inputs and *mass*, *cog_x*, *cog_y* must be specified as *auto* or are in any case ignored.
