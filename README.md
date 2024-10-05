@@ -90,7 +90,7 @@ case             = w3
     - *control_points* defines the list of points which are tracked and for which the final hydrostatic equilibrium positions are reported. The list must be inserted as list of list using square brackets, e.g., *[[0.0, 0.212, 0.0289288],[0.0, 0.0, 0.01]]*
 
 Beware: *mass*, *cog_x*, *cog_y*, *z_water_fixed*, *alfa_fixed*, *heel_fixed* can be inputs, outputs, or optional inputs depending on the selected mode. For example:
-- the 3DOF solver requires *mass*, *cog_x*, *cog_y* as inputs but *z_water_fixed*, *alfa_fixed*, *heel_fixed* can be specified as *auto* or giving values which are treated as initial values to speed-up the convergence of their solutions. - - the 0DOF solver requires *alfa_fixed*, *heel_fixed* and *z_water_fixed* as inputs and *mass*, *cog_x*, *cog_y* must be specified as *auto* or are in any case ignored.
+- the 3DOF solver requires *mass*, *cog_x*, *cog_y* as inputs but *z_water_fixed*, *alfa_fixed*, *heel_fixed* can be specified as *auto* or giving values which are treated as initial values to speed-up the convergence of their solutions. The 0DOF solver requires *alfa_fixed*, *heel_fixed* and *z_water_fixed* as inputs and *mass*, *cog_x*, *cog_y* must be specified as *auto* or are in any case ignored.
 
 An example is given below:
 ```
