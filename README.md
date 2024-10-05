@@ -2,6 +2,8 @@
 
 ## Quick start
 
+Python3.11 is required. Steps refer to Linux installations.
+
 [1] Clone the repository:
 ```
 cd $HOME && mkdir VESSELPY && cd VESSELPY
@@ -16,17 +18,17 @@ cd vesselpy
 pip3 install -r requirements.txt
 ```
 
-[3] Add vesselpy bin to PATH environment variable (to `.bashrc`):
+[3] Add vesselpy bin to PATH environment variable (and optionally to `.bashrc`):
 ```
 export PATH=$HOME/VESSELPY/vesselpy/bin:$PATH
 ```
 
-[4] Download and install ParaView:
+[4] Download and install ParaView, e.g. using Ubuntu:
 ```
 apt install paraview
 ```
 
-[5] Set ParaView folder in `load_env.sh`, e.g, e.g..:
+[5] Set ParaView folder in `load_env.sh`, e.g:
 ```
 export PARAVIEW_FOLDER="/opt/paraviewopenfoam510/lib/python3.10/site-packages"
 ```
@@ -53,9 +55,9 @@ Two input files are needed to start:
 
 ### config.ini
 
-The file is a .ini file including two sections: *general* and *case_\<casename\>* sections.
+The file is a *.ini* file including two sections: *general* and *case_\<casename\>* sections.
 
-*general* section includes:
+* *general* section includes:
 - *gravity*
 - atmospheric pressure *p_atmo* (which has no actually no role)
 - *refine_factor* which decides how to refine the surface (can be kept as 1 to avoid refinement) 
@@ -70,7 +72,7 @@ refine_factor    = 1.
 case             = w3
 ```
 
-*case_\<casename\>* section contains
+* *case_\<casename\>* section contains
 - *mode*, i.e., the hydrostatic mode which can be on the following:
 ```
 "weight_lcg_tcg", "weight_lcg_heel", "weight_trim_tcg", "weight_trim_heel", "sinkage_trim_heel"
