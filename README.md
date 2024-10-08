@@ -18,7 +18,7 @@ cd vesselpy
 pip3 install -r requirements.txt
 ```
 
-[3] Add vesselpy bin to PATH environment variable (and optionally to `.bashrc`):
+[3] Add vesselpy bin to PATH environment variable (and optionally add this line to `.bashrc`):
 ```
 export PATH=$HOME/VESSELPY/vesselpy/bin:$PATH
 ```

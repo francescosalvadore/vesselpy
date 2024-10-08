@@ -152,7 +152,7 @@ def equations_3DOF(p, stl_obj, cog, cor, mass, rho, p_atmo, gravity, max_trim, m
     print_log(f"z_water={z_water} alfa={alfa} heel={heel}")
     # must limit alfa, otherwise there are around +/-90 degrees solutions
     if abs(heel) > max_heel:
-        return 1000., 1000.
+        return 1000., 1000., 1000.
     if abs(alfa) > max_trim:
         return 1000., 1000., 1000
     # use -heel so that cor_y > 0 corresponds to positive heels
